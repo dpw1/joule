@@ -1,0 +1,240 @@
+{%- assign hide = section.settings.hide -%}
+
+{% if hide == false %}
+<footer class="div">
+	<div class="footer">
+		<div class="footer-items">
+
+			<div class="footer-item footer-item-links">
+				<ul>
+                  
+                                {% for block in section.blocks %}
+           {% case block.type %}
+               {% when 'footer-items' %}
+
+     
+      <li class="footer-each"><a href="{{ block.settings.footer-link }}">{{ block.settings.footer-text }}</a></li>
+                    
+           {% endcase %}
+        {% endfor %}
+				</ul>
+			</div>
+		</div>
+	</div>
+</footer>
+
+<style>
+.footer {
+  background-color: {{section.settings.bg-footer-color}};
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-justify-content: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+    box-sizing: border-box;
+    padding: 98px 56px;
+    -webkit-animation: footer-fadein 2s;
+    animation: footer-fadein 2s;
+}
+
+.footer .footer-items {
+    width: 700px;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+}
+
+@-webkit-keyframes footer-fadein {
+    0% {
+        opacity: 0;
+    }
+
+    50% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes footer-fadein {
+    0% {
+        opacity: 0;
+    }
+
+    50% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+.footer-item-links {
+    -webkit-flex: 0 1 100%;
+    -ms-flex: 0 1 100%;
+    flex: 0 1 100%;
+    padding-left: 14px;
+  color: {{section.settings.text-color}};
+    font-size: 16px;
+    line-height: 28px;
+    font-weight: normal;
+}
+
+.footer-item-links ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-item-links ul li a {
+  color: {{section.settings.text-color}};
+    font-weight: 700;
+}
+
+.footer-item-links ul li a:hover {
+    text-decoration: underline;
+}
+
+.updated {
+    font-size: 11px;
+    opacity: 0.7;
+    white-space: nowrap;
+}
+
+@media (min-width: 700px) {
+    .updated {
+        padding-left: 14px;
+    }
+}
+
+@media (max-width: 700px) {
+    .footer {
+        padding: 56px 14px;
+    }
+
+  .footer .footer-each{
+  	display: block;
+  }
+    .footer .footer-items {
+        -webkit-flex-direction: column;
+        -ms-flex-direction: column;
+        flex-direction: column;
+        max-width: 180px;
+    }
+
+    .footer .footer-items .footer-item-logo {
+        -webkit-flex: none;
+        -ms-flex: none;
+        flex: none;
+        padding: 0;
+        margin: 0 0 28px;
+        border: 0px;
+        text-align: center;
+    }
+
+    .footer .footer-items .footer-item-logo .footer-logo {
+        margin: 0 auto 14px;
+        max-width: 150px;
+        padding: 0;
+    }
+
+    .footer .footer-items .footer-item-logo a {
+        padding: 14px;
+    }
+
+    .footer .footer-items .footer-item-links {
+        -webkit-flex: none;
+        -ms-flex: none;
+        flex: none;
+        padding: 28px 0;
+        text-align: center;
+        border-top: 1px solid rgba(255, 255, 255, 0.2);
+      	border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    }
+
+    .footer .footer-items .footer-item-links ul {
+        padding: 0px;
+    }
+}
+  .footer-item ul{
+  	text-align: center;
+  }
+.footer-each {
+    display: inline-block;
+}
+  @media (min-width:700px){
+  .footer-each:after {
+    content: '|';
+    margin: 0 15px;
+}
+.footer-each:last-child:after{
+    content:'|';
+    margin: 0;
+    color: transparent;  
+}
+  }
+
+</style>
+{% endif %}
+{% schema %}
+  {
+    "name": "lander Footer",
+    "class": "lander-footer-section",
+    "settings": [
+      {
+        "type": "checkbox",
+        "id": "hide",
+        "label": "Hide this section",
+		"default": false
+      },
+      {
+        "type": "color",
+        "id": "bg-footer-color",
+        "label": "Background Color",
+		"info": "You may need to save and refresh to see changes.",
+        "default": "#383736"
+      },
+      {
+        "type": "color",
+        "id": "text-color",
+        "label": "Text Color",
+		"info": "You may need to save and refresh to see changes.",
+        "default": "#ffffff"
+      }
+
+	  ],
+       "blocks": [
+    {
+      "type": "footer-items",
+      "name": "lander Footer",
+      "settings": [
+        {
+          "id": "footer-text",
+          "type": "text",
+          "label": "Text"
+		
+        },
+        {
+          "id": "footer-link",
+          "type": "text",
+          "label": "URL/Link",
+		  "info": "Please include the complete link (with http/htpps), like: https://www.google.com/"
+        }
+      ]
+    }
+  ]
+  }
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

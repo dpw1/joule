@@ -1,0 +1,109 @@
+
+    <script id="CartTemplate" type="text/template">
+      {% raw %}
+        <form action="/cart" method="post" novalidate class="cart ajaxcart">
+          <div class="ajaxcart__inner ajaxcart__inner--has-fixed-footer">
+            {{#items}}
+            <div class="ajaxcart__row">
+              <div class="ajaxcart__product" data-line="{{line}}">
+                <div class="grid grid--half-gutters">
+                  <div class="grid__item one-quarter">
+                    <a href="{{url}}" class="ajaxcart__product-image"><img src="{{img}}" alt="{{name}}"></a>
+                  </div>
+                  <div class="grid__item three-quarters">
+                    <div class="ajaxcart__product-name-wrapper">
+                      <a href="{{url}}" class="ajaxcart__product-name h4">{{name}}</a>
+                      {{#if variation}}
+                        <span class="ajaxcart__product-meta">{{variation}}</span>
+                      {{/if}}
+                      {{#properties}}
+                        {{#each this}}
+                          {{#if this}}
+                            <span class="ajaxcart__product-meta">{{@key}}: {{this}}</span>
+                          {{/if}}
+                        {{/each}}
+                      {{/properties}}
+                    </div>
+
+                    <div class="grid grid--table">
+                      <div class="grid__item one-half">
+                        <div class="ajaxcart__qty">
+                          <button type="button" class="ajaxcart__qty-adjust ajaxcart__qty--minus" data-id="{{key}}" data-qty="{{itemMinus}}" data-line="{{line}}" aria-label="{% endraw %}{{ 'cart.label.reduce_quantity' | t }}{% raw %}">
+                            <span class="icon icon-minus" aria-hidden="true"></span>
+                            <span class="icon__fallback-text" aria-hidden="true">&minus;</span>
+                          </button>
+                          <input type="text" name="updates[]" class="ajaxcart__qty-num" value="{{itemQty}}" min="0" data-id="{{key}}" data-line="{{line}}" aria-label="quantity" pattern="[0-9]*">
+                          <button type="button" class="ajaxcart__qty-adjust ajaxcart__qty--plus" data-id="{{key}}" data-line="{{line}}" data-qty="{{itemAdd}}" aria-label="{% endraw %}{{ 'cart.label.increase_quantity' | t }}{% raw %}">
+                            <span class="icon icon-plus" aria-hidden="true"></span>
+                            <span class="icon__fallback-text" aria-hidden="true">+</span>
+                          </button>
+                        </div>
+                      </div>
+                      <div class="grid__item one-half text-right">
+                      {{#if discountsApplied}}
+                        <small class="ajaxcart-item__price-strikethrough"><s>{{{originalLinePrice}}}</s></small>
+                        <br><span>{{{linePrice}}}</span>
+                      {{else}}
+                         <span>{{{linePrice}}}</span>
+                      {{/if}}
+                      </div>
+                    </div>
+                    {{#if discountsApplied}}
+                      <div class="grid grid--table">
+                        <div class="grid__item text-right">
+                          {{#each discounts}}
+                            <small class="ajaxcart-item__discount">{{ this.title }}</small><br>
+                          {{/each}}
+                        </div>
+                      </div>
+                    {{/if}}
+                  </div>
+                </div>
+              </div>
+            </div>
+            {{/items}}
+
+            {% endraw %}{% if settings.cart_notes_enable %}{% raw %}
+              <div class="ajaxcart__row">
+                <label for="CartSpecialInstructions" class="ajaxcart__note txt--minor">{% endraw %}{{ 'cart.general.note' | t }}{% raw %}</label>
+                <textarea name="note" class="input-full" id="CartSpecialInstructions">{{note}}</textarea>
+              </div>
+            {% endraw %}{% endif %}{% raw %}
+          </div>
+          <div class="ajaxcart__footer ajaxcart__footer--fixed">
+            <div class="ajaxcart__subtotal">
+              <div class="grid grid--table">
+                <div class="grid__item two-thirds">
+                  <span class="ajaxcart__subtotal-title h3">{% endraw %}{{ 'cart.general.subtotal' | t }}{% raw %}</span>
+                </div>
+                <div class="grid__item one-third text-right">
+                  <span>{{{totalPrice}}}</span>
+                </div>
+              </div>
+              {{#if totalCartDiscountApplied}}
+                <p class="ajaxcart__savings text-center"><em>{{{totalCartDiscount}}}</em></p>
+              {{/if}}
+            </div>
+            <p class="text-center ajaxcart__note txt--minor">{% endraw %}{{ 'cart.general.shipping_at_checkout' | t }}{% raw %}</p>
+            <button type="submit" class="btn btn--full cart__checkout" name="checkout">
+              {% endraw %}{{ 'cart.general.checkout' | t }}{% raw %}
+            </button>
+          </div>
+        </form>
+      {% endraw %}
+    </script>
+    <script id="JsQty" type="text/template">
+      {% raw %}
+        <div class="js-qty">
+          <button type="button" class="js-qty__adjust js-qty__adjust--minus" data-id="{{key}}" data-qty="{{itemMinus}}" aria-label="{% endraw %}{{ 'cart.label.reduce_quantity' | t }}{% raw %}">
+            <span class="icon icon-minus" aria-hidden="true"></span>
+            <span class="icon__fallback-text" aria-hidden="true">&minus;</span>
+          </button>
+          <input type="text" class="js-qty__num" value="{{itemQty}}" min="1" data-id="{{key}}" aria-label="quantity" pattern="[0-9]*" name="{{inputName}}" id="{{inputId}}">
+          <button type="button" class="js-qty__adjust js-qty__adjust--plus" data-id="{{key}}" data-qty="{{itemAdd}}" aria-label="{% endraw %}{{ 'cart.label.increase_quantity' | t }}{% raw %}">
+            <span class="icon icon-plus" aria-hidden="true"></span>
+            <span class="icon__fallback-text" aria-hidden="true">+</span>
+          </button>
+        </div>
+      {% endraw %}
+   </script>

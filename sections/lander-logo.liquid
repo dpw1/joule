@@ -1,0 +1,92 @@
+{%- assign hide = section.settings.hide -%}
+{%- assign logo-image = section.settings.logo-image -%}
+{%- assign logo-position = section.settings.logo-position -%}
+{%- assign logo-width = section.settings.logo-width -%}
+
+
+{% if hide == false %}
+<section id="landerLogo" class="lander-logo">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12 lander-logo__wrapper">
+        <img class="lander-logo__image
+             {% if logo-position == 'logo-center' %}lander-logo__image--center{% endif %}
+             {% if logo-position == 'logo-right' %}lander-logo__image--right{% endif %}"
+             src="{{ section.settings.logo-image | img_url: 'master' }}" 
+             alt="Logo"/>
+      </div>
+    </div>
+  </div>
+</section>
+<style>
+  .lander-logo__image{
+    max-width: {{logo-width}}px;
+    width: 100%;
+    display: inline-block;
+  }
+  
+  .lander-logo__image--center{
+  	display: block;
+    margin: 0 auto;
+  }
+  .lander-logo__image--right{
+    display: block;
+	margin: 0 0 0 auto;      
+  }
+  
+{% if logo-position == 'logo-right' %}
+  
+{% endif %}
+
+</style>
+{% endif %}
+{% schema %}
+  {
+    "name": "Logo",
+    "settings": [
+	  {
+        "type": "checkbox",
+        "id": "hide",
+        "label": "Hide this section",
+		"default": false
+      },
+	  {
+        "type": "image_picker",
+        "id": "logo-image",
+        "label": "Logo"
+      },
+	  {
+        "type": "text",
+        "id": "logo-width",
+        "label": "Max width in pixels (type in only numbers).",
+		"default": "150"
+      },
+      {
+        "type": "radio",
+        "id": "logo-position",
+        "label": "Logo Position",
+        "default": "logo-left",
+        "options": [
+          {
+            "value": "logo-left",
+            "label": "Left"
+          },
+          {
+            "value": "logo-center",
+            "label": "Center"
+          },
+          {
+            "value": "logo-right",
+            "label": "Right"
+          }
+        ]
+      }
+	]
+  }
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

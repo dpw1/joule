@@ -1,0 +1,758 @@
+{
+  "current": {
+    "color_body_bg": "#ffffff",
+    "color_body_headings": "#1a1a1a",
+    "color_body_text": "#666666",
+    "color_body_links": "#1a1a1a",
+    "color_button_bg": "#1a1a1a",
+    "color_button_text": "#fff",
+    "color_sale_badge": "#dac08e",
+    "color_borders": "#eeeeee",
+    "color_nav_bg": "#ffffff",
+    "color_nav_text": "#1a1a1a",
+    "color_action_bar_bg": "#1a1a1a",
+    "color_action_bar_text": "#ffffff",
+    "color_action_bar_text_active": "#ffffff",
+    "color_drawer_bg": "#ffffff",
+    "color_drawer_text": "#1a1a1a",
+    "color_footer_bg": "#f9f9f9",
+    "color_footer_text": "#5c5c5c",
+    "type_header_family": "Google_Karla_700_sans",
+    "type_header_base_size": "25px",
+    "type_button_base_size": "16px",
+    "type_header_transform": false,
+    "type_header_spacing": "0.05em",
+    "type_base_family": "Google_Open+Sans_400_sans",
+    "type_base_size": "15px",
+    "cart_type": "drawer",
+    "cart_notes_enable": false,
+    "share_image": "",
+    "social_facebook_link": "",
+    "social_twitter_link": "",
+    "social_pinterest_link": "",
+    "social_instagram_link": "",
+    "social_snapchat_link": "",
+    "social_google_plus_link": "",
+    "social_tumblr_link": "",
+    "social_youtube_link": "",
+    "social_vimeo_link": "",
+    "social_fancy_link": "",
+    "share_facebook": true,
+    "share_twitter": true,
+    "share_pinterest": true,
+    "favicon": "",
+    "checkout_header_image": "",
+    "checkout_logo_image": "",
+    "checkout_logo_position": "left",
+    "checkout_logo_size": "medium",
+    "checkout_body_background_image": "",
+    "checkout_body_background_color": "#fff",
+    "checkout_input_background_color_mode": "white",
+    "checkout_sidebar_background_image": "",
+    "checkout_sidebar_background_color": "#fafafa",
+    "checkout_heading_font": "Helvetica Neue",
+    "checkout_body_font": "Helvetica Neue",
+    "checkout_accent_color": "#1a1a1a",
+    "checkout_button_color": "#1a1a1a",
+    "checkout_error_color": "#de2a2a",
+    "checkout_logo": "",
+    "checkout_use_body_background_image": false,
+    "checkout_use_header_image": false,
+    "checkout_use_sidebar_background_image": false,
+    "color_drawer_inputs": "#ffffff",
+    "favicon_enable": false,
+    "sections": {
+      "announcement-bar": {
+        "type": "announcement-bar",
+        "settings": {
+          "show_announcement": false,
+          "home_page_only": false,
+          "text": "",
+          "link": "",
+          "color_bg": "#dbc18b",
+          "color_text": "#fff"
+        }
+      },
+      "header": {
+        "type": "header",
+        "settings": {
+          "logo": "",
+          "logo_width": "180"
+        }
+      },
+      "slideshow": {
+        "type": "slideshow",
+        "settings": {
+          "hero_text_color": "#ffffff",
+          "hero_logo_type": "text",
+          "hero-logo": "",
+          "hero_logo_max_width": "400",
+          "hero_overlay_color": "#000000",
+          "hero_overlay_amount": "0.20"
+        }
+      },
+      "sidebar-menu": {
+        "type": "sidebar-menu",
+        "settings": {
+          "sidebar_top_link_list": "main-menu",
+          "sidebar_bottom_link_list": "footer"
+        }
+      },
+      "action-bar": {
+        "type": "action-bar",
+        "settings": {
+          "action_bar_link_list": "main-menu"
+        }
+      },
+      "footer": {
+        "type": "footer",
+        "settings": {
+          "footer_link_list": "footer"
+        }
+      },
+      "product-template": {
+        "type": "product-template",
+        "settings": {
+          "skip_first_product_image": false,
+          "product_image_type": "portrait",
+          "show_vendor": false,
+          "show_quantity_selector": false,
+          "social_sharing_products": true,
+          "product_form_width": "small"
+        }
+      },
+      "collection-template": {
+        "type": "collection-template",
+        "settings": {
+          "product_image_type": "portrait",
+          "product_image_size": "medium",
+          "product_image_spacing": false,
+          "vendor_enable": false,
+          "collection_sort_enable": false,
+          "collection_tags_enable": false,
+          "pagination_type": "numbers"
+        }
+      },
+      "lander-productpage": {
+        "type": "lander-productpage",
+        "settings": {
+          "hide": false,
+          "feature_product": "amazing-5",
+          "atc-text": "Buy Now",
+          "show_quantity": true,
+          "atc": "atc-checkout"
+        }
+      },
+      "lander-social": {
+        "type": "lander-social",
+        "settings": {
+          "hide": false,
+          "review_title": "People love lander! Read their reviews.",
+          "review_script": "",
+          "review_app": "product-reviews",
+          "product-reviews-id": "601362595903",
+          "product-reviews-text": "Rated <b>8.5<\/b> out of <b>10<\/b> based on <b>250 reviews<\/b>"
+        }
+      },
+      "lander-media": {
+        "type": "lander-media",
+        "blocks": {
+          "1532007281347": {
+            "type": "media-items",
+            "settings": {
+              "media-image": "shopify:\/\/shop_images\/Press-foodwine.png",
+              "img-heading": "oik",
+              "img-text": "pkpjkij"
+            }
+          },
+          "1532007285715": {
+            "type": "media-items",
+            "settings": {
+              "media-image": "shopify:\/\/shop_images\/Press-wired.png",
+              "img-heading": "asd",
+              "img-text": "asd"
+            }
+          },
+          "1532007287922": {
+            "type": "media-items",
+            "settings": {
+              "media-image": "shopify:\/\/shop_images\/Press-foodwine.png",
+              "img-heading": "123",
+              "img-text": "3333"
+            }
+          },
+          "1532007289403": {
+            "type": "media-items",
+            "settings": {
+              "media-image": "shopify:\/\/shop_images\/Press-nyt.png",
+              "img-heading": "444",
+              "img-text": "444"
+            }
+          }
+        },
+        "block_order": [
+          "1532007281347",
+          "1532007285715",
+          "1532007287922",
+          "1532007289403"
+        ],
+        "settings": {
+          "hide": false,
+          "bg_color": "#ff674d"
+        }
+      },
+      "lander-demo": {
+        "type": "lander-demo",
+        "settings": {
+          "hide": false,
+          "video_link": "aiavtMNE8lc",
+          "video_image": "shopify:\/\/shop_images\/bg_2.jpg",
+          "fifth_video_title": "Sous vide: Say goodbye to overcooking.",
+          "fifth_video_text1": "lander heats to the perfect temperature—no more, no less—which means that your proteins won’t overcook, ever. Even if they cook for extra time. Learn more about sous vide."
+        }
+      },
+      "lander-product-satisfaction": {
+        "type": "lander-product-satisfaction",
+        "settings": {
+          "hide": false,
+          "hide_arrows": false,
+          "padding": "20",
+          "bg_color": "#f7f7f7",
+          "bg_color_hide": false,
+          "fifth_full_img1": "shopify:\/\/shop_images\/icon_5.jpg",
+          "fifth_full_img_txt1": "Item 1",
+          "fifth_full_img2": "shopify:\/\/shop_images\/icon_6.jpg",
+          "fifth_full_img_txt2": "Item 2",
+          "fifth_full_img3": "shopify:\/\/shop_images\/icon_4.jpg",
+          "fifth_full_img_txt3": "Item 3",
+          "fifth_full_img4": "shopify:\/\/shop_images\/icon_4.jpg",
+          "fifth_full_img_txt4": "ji"
+        }
+      },
+      "lander-lifestyle": {
+        "type": "lander-lifestyle",
+        "settings": {
+          "hide": false,
+          "fifth_image_2": "shopify:\/\/shop_images\/S3A8422-cropped.jpg",
+          "fifth_title2": "Small. Sleek. Wicked powerful.",
+          "fifth_text2": "lander is the smallest sous vide tool on the market. But it’s also the most powerful: The water heats up more quickly, so you get to cooking—and eating—sooner.",
+          "lifestyle_text1": "hello",
+          "lifestyle_link1": "#",
+          "fifth_image_3": "shopify:\/\/shop_images\/S3A8422-cropped.jpg",
+          "fifth_title3": "lander is the smallest sous vide tool on the market. But it’s also the most powerful: The water heats up more quickly, so you get to cooking—and eating—sooner.",
+          "fifth_text3": "lander is the smallest sous vide tool on the market. But it’s also the most powerful: The water heats up more quickly, so you get to cooking—and eating—sooner.",
+          "lifestyle_text2": "hillo",
+          "lifestyle_link2": "#"
+        }
+      },
+      "lander-settings": {
+        "type": "lander-settings",
+        "settings": {
+          "btn_color": "#43413f",
+          "btn_textcolor": "#ffffff",
+          "title-color2": "#ff674d"
+        }
+      },
+      "lander-benefits": {
+        "type": "lander-benefits",
+        "blocks": {
+          "1532270740350": {
+            "type": "select",
+            "settings": {
+              "six-image": "shopify:\/\/shop_images\/icon_6.jpg",
+              "img-heading": "title",
+              "img-text": "title"
+            }
+          },
+          "1532270759774": {
+            "type": "select",
+            "settings": {
+              "six-image": "shopify:\/\/shop_images\/icon_2.jpg",
+              "img-heading": "tiutle",
+              "img-text": "title"
+            }
+          },
+          "1532270769535": {
+            "type": "select",
+            "settings": {
+              "six-image": "shopify:\/\/shop_images\/icon_6.jpg",
+              "img-heading": "",
+              "img-text": ""
+            }
+          },
+          "1532274618916": {
+            "type": "select",
+            "settings": {
+              "six-image": "shopify:\/\/shop_images\/icon_4.jpg",
+              "img-heading": "adfsdfsdfs",
+              "img-text": "dfsasadffdsaa"
+            }
+          },
+          "1532274672931": {
+            "type": "select",
+            "settings": {
+              "six-image": "",
+              "img-heading": "",
+              "img-text": ""
+            }
+          },
+          "1532274674826": {
+            "type": "select",
+            "settings": {
+              "six-image": "",
+              "img-heading": "",
+              "img-text": ""
+            }
+          }
+        },
+        "block_order": [
+          "1532270740350",
+          "1532270759774",
+          "1532270769535",
+          "1532274618916",
+          "1532274672931",
+          "1532274674826"
+        ],
+        "settings": {
+          "hide": false,
+          "benefits-bg-color": "#f7dfdd",
+          "title-color": "#000000",
+          "sixth_image_left": "shopify:\/\/shop_images\/lander-vertical-shadow.png",
+          "sixth_image_right": "shopify:\/\/shop_images\/lander-foot-shadow.png",
+          "image-max-width": "",
+          "sixth_title": "this is the tiel",
+          "benefit_btn_text": "helloj",
+          "benefit_btn_link": "hello"
+        }
+      },
+      "lander-influencer": {
+        "type": "lander-influencer",
+        "blocks": {
+          "1532399236537": {
+            "type": "influencer-items",
+            "settings": {
+              "influencer-image": "shopify:\/\/shop_images\/S3A8422-cropped.jpg",
+              "influencer-text": "heading 1",
+              "influencer-video": "lRcjfdiFwVo"
+            }
+          },
+          "1532399259201": {
+            "type": "influencer-items",
+            "settings": {
+              "influencer-image": "shopify:\/\/shop_images\/lander_with_competitors-2.jpg",
+              "influencer-text": "heading 2",
+              "influencer-video": "oQeIbUSeuQY"
+            }
+          },
+          "1532400643907": {
+            "type": "influencer-items",
+            "settings": {
+              "influencer-image": "shopify:\/\/shop_images\/S3A8422-cropped.jpg",
+              "influencer-text": "heading 3",
+              "influencer-video": "3"
+            }
+          },
+          "1532400659365": {
+            "type": "influencer-items",
+            "settings": {
+              "influencer-image": "shopify:\/\/shop_images\/lander_with_competitors-2.jpg",
+              "influencer-text": "heading 4",
+              "influencer-video": "4"
+            }
+          },
+          "1532566721715": {
+            "type": "influencer-items",
+            "settings": {
+              "influencer-image": "shopify:\/\/shop_images\/lander_with_competitors-2.jpg",
+              "influencer-text": "fifth one",
+              "influencer-video": "code"
+            }
+          }
+        },
+        "block_order": [
+          "1532399236537",
+          "1532399259201",
+          "1532400643907",
+          "1532400659365",
+          "1532566721715"
+        ],
+        "settings": {
+          "hide": false,
+          "inf-title": "Title",
+          "inf-subtitle": "subtuitelte",
+          "preview-image": "shopify:\/\/shop_images\/bg_2.jpg",
+          "border-color": "#ff674d"
+        }
+      },
+      "lander-instagram": {
+        "type": "lander-instagram",
+        "settings": {
+          "hide": false,
+          "instagram_script": "",
+          "ig-color": "#f7f7f7"
+        }
+      },
+      "lander-cta": {
+        "type": "lander-cta",
+        "settings": {
+          "hide": false,
+          "cta-img": "shopify:\/\/shop_images\/S3A8422-cropped.jpg",
+          "cta-msg": "title1",
+          "cta-text": "buttomn",
+          "cta-link": "https:\/\/codepen.io\/",
+          "cta-bg": "#ff674d",
+          "cta-fontcolor": "#ffffff"
+        }
+      },
+      "lander-hero-section": {
+        "type": "lander-hero-section",
+        "settings": {
+          "hide": false,
+          "title-color": "#aeff05",
+          "third_sec_title": "This is the title<br>for the hero section [egg|milk]",
+          "anim-speed": 550,
+          "third_sec_bgimg": "shopify:\/\/shop_images\/bg_2.jpg",
+          "overlay": 50
+        }
+      },
+      "lander-footer": {
+        "type": "lander-footer",
+        "blocks": {
+          "1533671586688": {
+            "type": "footer-items",
+            "settings": {
+              "footer-text": "Text 1",
+              "footer-link": "hello"
+            }
+          },
+          "1533671705151": {
+            "type": "footer-items",
+            "settings": {
+              "footer-text": "TExt 2",
+              "footer-link": "teeet"
+            }
+          },
+          "1533671710871": {
+            "type": "footer-items",
+            "settings": {
+              "footer-text": "text 3",
+              "footer-link": "1234124"
+            }
+          },
+          "1533671714361": {
+            "type": "footer-items",
+            "settings": {
+              "footer-text": "text 414143",
+              "footer-link": "asasd"
+            }
+          },
+          "1533671718136": {
+            "type": "footer-items",
+            "settings": {
+              "footer-text": "text 152512",
+              "footer-link": "dfsadfa"
+            }
+          },
+          "1533671722387": {
+            "type": "footer-items",
+            "settings": {
+              "footer-text": "text 777",
+              "footer-link": "343543"
+            }
+          }
+        },
+        "block_order": [
+          "1533671586688",
+          "1533671705151",
+          "1533671710871",
+          "1533671714361",
+          "1533671718136",
+          "1533671722387"
+        ],
+        "settings": {
+          "hide": false,
+          "bg-footer-color": "#383736",
+          "text-color": "#ffffff"
+        }
+      },
+      "lander-logo": {
+        "type": "lander-logo",
+        "settings": {
+          "hide": false,
+          "logo-image": "shopify:\/\/shop_images\/cute-dog-in-blanket.jpg",
+          "logo-width": "150",
+          "logo-position": "logo-right"
+        }
+      }
+    },
+    "content_for_index": []
+  },
+  "presets": {
+    "Black & white": {
+      "cart_type": "drawer",
+      "cart_notes_enable": false,
+      "checkout_accent_color": "#1a1a1a",
+      "checkout_body_background_color": "#fff",
+      "checkout_body_font": "Helvetica Neue",
+      "checkout_button_color": "#1a1a1a",
+      "checkout_error_color": "#de2a2a",
+      "checkout_heading_font": "Helvetica Neue",
+      "checkout_input_background_color_mode": "white",
+      "checkout_logo": "",
+      "checkout_logo_position": "left",
+      "checkout_logo_size": "medium",
+      "checkout_sidebar_background_color": "#fafafa",
+      "checkout_use_body_background_image": false,
+      "checkout_use_header_image": false,
+      "checkout_use_sidebar_background_image": false,
+      "color_action_bar_bg": "#1a1a1a",
+      "color_action_bar_text": "#ffffff",
+      "color_action_bar_text_active": "#ffffff",
+      "color_body_bg": "#ffffff",
+      "color_body_headings": "#1a1a1a",
+      "color_body_links": "#1a1a1a",
+      "color_body_text": "#666666",
+      "color_borders": "#eeeeee",
+      "color_button_bg": "#1a1a1a",
+      "color_button_text": "#fff",
+      "color_drawer_bg": "#ffffff",
+      "color_drawer_inputs": "#ffffff",
+      "color_drawer_text": "#1a1a1a",
+      "color_footer_bg": "#f9f9f9",
+      "color_footer_text": "#5c5c5c",
+      "color_nav_bg": "#ffffff",
+      "color_nav_text": "#1a1a1a",
+      "color_sale_badge": "#dac08e",
+      "favicon_enable": false,
+      "share_facebook": true,
+      "share_pinterest": true,
+      "share_twitter": true,
+      "type_base_family": "Google_Open+Sans_400_sans",
+      "type_base_size": "15px",
+      "type_button_base_size": "16px",
+      "type_header_base_size": "25px",
+      "type_header_family": "Google_Karla_700_sans",
+      "type_header_spacing": "0.05em",
+      "type_header_transform": false,
+      "sections": {
+        "announcement-bar": {
+          "type": "announcement-bar",
+          "settings": {
+            "show_announcement": true,
+            "color_bg": "#dbc18b"
+          }
+        },
+        "header": {
+          "type": "header",
+          "settings": {
+            "logo_width": "180"
+          }
+        },
+        "slideshow": {
+          "type": "slideshow",
+          "blocks": {
+            "slider-0": {
+              "type": "image",
+              "settings": {}
+            }
+          },
+          "block_order": [
+            "slider-0"
+          ],
+          "settings": {
+            "hero_text_color": "#ffffff",
+            "hero_logo_max_width": "400",
+            "hero_overlay_color": "#000000",
+            "hero_overlay_amount": "0.20"
+          }
+        },
+        "rich-text": {
+          "type": "rich-text",
+          "settings": {}
+        },
+        "featured-collection": {
+          "type": "featured-collection",
+          "settings": {
+            "home_featured_products": "frontpage",
+            "product_image_type": "portrait",
+            "product_image_size": "medium",
+            "product_image_spacing": false
+          }
+        },
+        "newsletter-signup": {
+          "type": "newsletter-signup",
+          "settings": {}
+        },
+        "sidebar-menu": {
+          "type": "sidebar-menu",
+          "settings": {
+            "sidebar_top_link_list": "main-menu",
+            "sidebar_bottom_link_list": "footer"
+          }
+        },
+        "action-bar": {
+          "type": "action-bar",
+          "settings": {
+            "action_bar_link_list": "main-menu"
+          }
+        },
+        "footer": {
+          "type": "footer",
+          "settings": {
+            "footer_link_list": "footer"
+          }
+        },
+        "product-template": {
+          "type": "product-template",
+          "settings": {}
+        },
+        "collection-template": {
+          "type": "collection-template",
+          "settings": {
+            "product_image_type": "portrait",
+            "product_image_size": "medium",
+            "product_image_spacing": false
+          }
+        }
+      },
+      "content_for_index": [
+        "rich-text",
+        "featured-collection",
+        "newsletter-signup"
+      ]
+    },
+    "Vibrant": {
+      "cart_type": "drawer",
+      "cart_notes_enable": false,
+      "checkout_accent_color": "#f26241",
+      "checkout_body_background_color": "#fff",
+      "checkout_body_font": "Helvetica Neue",
+      "checkout_button_color": "#1b100e",
+      "checkout_error_color": "#b01919",
+      "checkout_heading_font": "Helvetica Neue",
+      "checkout_input_background_color_mode": "white",
+      "checkout_logo": "",
+      "checkout_logo_position": "left",
+      "checkout_logo_size": "medium",
+      "checkout_sidebar_background_color": "#f4f4f4",
+      "checkout_use_body_background_image": false,
+      "checkout_use_header_image": false,
+      "checkout_use_sidebar_background_image": false,
+      "color_action_bar_bg": "#1b100e",
+      "color_action_bar_text": "#fff",
+      "color_action_bar_text_active": "#f26241",
+      "color_body_bg": "#ffffff",
+      "color_body_headings": "#1b100e",
+      "color_body_links": "#f26241",
+      "color_body_text": "#1b100e",
+      "color_borders": "#eceff1",
+      "color_button_bg": "#1b100e",
+      "color_button_text": "#fff",
+      "color_drawer_bg": "#f6f6f6",
+      "color_drawer_inputs": "#ffffff",
+      "color_drawer_text": "#3e3e3e",
+      "color_footer_bg": "#f4f4f4",
+      "color_footer_text": "#4a4a4a",
+      "color_nav_bg": "#f26241",
+      "color_nav_text": "#ffffff",
+      "color_sale_badge": "#f26241",
+      "favicon_enable": false,
+      "share_facebook": true,
+      "share_pinterest": true,
+      "share_twitter": true,
+      "type_base_family": "Google_Open+Sans_400_sans",
+      "type_base_size": "16px",
+      "type_button_base_size": "16px",
+      "type_header_base_size": "24px",
+      "type_header_family": "Google_Quantico_700_sans",
+      "type_header_spacing": "0.1em",
+      "type_header_transform": true,
+      "sections": {
+        "announcement-bar": {
+          "type": "announcement-bar",
+          "settings": {
+            "show_announcement": true,
+            "color_bg": "#f6602f"
+          }
+        },
+        "header": {
+          "type": "header",
+          "settings": {
+            "logo_width": "180"
+          }
+        },
+        "slideshow": {
+          "type": "slideshow",
+          "blocks": {
+            "slider-0": {
+              "type": "image",
+              "settings": {}
+            }
+          },
+          "block_order": [
+            "slider-0"
+          ],
+          "settings": {
+            "hero_text_color": "#ffffff",
+            "hero_logo_max_width": "400",
+            "hero_overlay_color": "#000",
+            "hero_overlay_amount": "0.20"
+          }
+        },
+        "rich-text": {
+          "type": "rich-text",
+          "settings": {}
+        },
+        "featured-collection": {
+          "type": "featured-collection",
+          "settings": {
+            "home_featured_products": "frontpage",
+            "product_image_type": "landscape",
+            "product_image_size": "large",
+            "product_image_spacing": true
+          }
+        },
+        "newsletter-signup": {
+          "type": "newsletter-signup",
+          "settings": {}
+        },
+        "sidebar-menu": {
+          "type": "sidebar-menu",
+          "settings": {
+            "sidebar_top_link_list": "main-menu",
+            "sidebar_bottom_link_list": "footer"
+          }
+        },
+        "action-bar": {
+          "type": "action-bar",
+          "settings": {
+            "action_bar_link_list": "main-menu"
+          }
+        },
+        "footer": {
+          "type": "footer",
+          "settings": {
+            "footer_link_list": "footer"
+          }
+        },
+        "collection-template": {
+          "type": "collection-template",
+          "settings": {
+            "product_image_type": "landscape",
+            "product_image_size": "large",
+            "product_image_spacing": true
+          }
+        },
+        "product-template": {
+          "type": "product-template",
+          "settings": {}
+        }
+      },
+      "content_for_index": [
+        "rich-text",
+        "featured-collection",
+        "newsletter-signup"
+      ]
+    }
+  }
+}

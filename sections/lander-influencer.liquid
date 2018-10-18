@@ -1,0 +1,418 @@
+
+{%- assign hide = section.settings.hide -%}
+
+{%- assign video_link = section.settings.video_link -%}
+{% if hide == false %}
+<section class="fifth_section landerinfl">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12 content_area">
+        <h2>{{ section.settings.inf-title }}</h2>
+        <p>{{ section.settings.inf-subtitle }}</p>
+      </div>
+    </div>
+    
+  </div>
+</section>
+<section class="lander-influencer">
+  <div class="influencer__container">
+  <div class="influencer__top">
+        <div class="influencer__top-video">
+          <img class="influencer__top-image" src="{{ section.settings.preview-image | img_url: 'master' }}" alt=""/>
+                              <span class="top__svg-wrapper">
+            <svg class="svg-top top__svg" viewBox="-780.6 689.9 19.8 22.1" style="enable-background:new -780.6 689.9 19.8 22.1;" xml:space="preserve" width="100%" height="100%">
+<path fill="currentColor" id="azXMLID_1287_" d="M-780.6,691.2v19.5c0,1,1.1,1.6,1.9,1.1l17.2-9.7c0.9-0.5,0.9-1.8,0-2.3l-17.2-9.7
+	C-779.5,689.6-780.6,690.2-780.6,691.2z"></path>
+</svg>
+          </span>
+        	<iframe class="influencer__top-iframe" id="landerInfluencerVideo"  src="https://www.youtube.com/embed/{{ section.settings.video_link }}" style="width:100%; height:100%;" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+          <div id="influencerVideoContainer"></div>
+        </div>
+        
+  </div>
+  <div class="influencer__bottom">
+  	            <div class="influencer__carousel">
+              {% for block in section.blocks %}
+           {% case block.type %}
+               {% when 'influencer-items' %}
+
+     
+        <div class="influencer__bottom-item" data-video="{{ block.settings.influencer-video }}" data-img="{{ block.settings.influencer-image | img_url: 'master' }}" data-text="{{ block.settings.influencer-text }}">
+                  <img class="influencer__bottom-image" src="{{ block.settings.influencer-image | img_url: 'master' }}" alt=""/>
+                  <p class="influencer__bottom-text">{{ block.settings.influencer-text }}</p>
+                    <span class="influencer__svg-wrapper">
+            <svg class="influencer__svg" viewBox="-780.6 689.9 19.8 22.1" style="enable-background:new -780.6 689.9 19.8 22.1;" xml:space="preserve" width="100%" height="100%">
+<path fill="currentColor" id="azXMLID_1287_" d="M-780.6,691.2v19.5c0,1,1.1,1.6,1.9,1.1l17.2-9.7c0.9-0.5,0.9-1.8,0-2.3l-17.2-9.7
+	C-779.5,689.6-780.6,690.2-780.6,691.2z"></path>
+</svg>
+          </span>
+        </div>
+
+                    
+           {% endcase %}
+        {% endfor %}
+      
+         </div>
+  </div>
+  </div>
+</section>
+
+
+
+<style>
+  .landerinfl *{
+  	text-align: center;
+  }
+  .influencer__container{
+  	max-width: 1110px;
+    width: 100%;
+    margin: 0 auto;
+    display: block;
+  }
+  
+  .influencer__top-video{
+  	max-width: 100%;
+    position: relative;
+  }
+  
+  .influencer__top-image{
+  	z-index: 2;
+    transition: all .22s ease;
+    opacity: 1;
+  }
+  .influencer__top-image--hide,
+  .top__svg-wrapper--hide{
+  	opacity: 0;
+    pointer-events: none;
+  }
+  .influencer__top-image,
+  .influencer__top-iframe{
+  	position: absolute;
+    top: 0;
+    width: 100%;
+    left: 0;
+    right: 0;
+    height: 100%;
+  }
+  .influencer__carousel{
+  	max-width: 100%;
+    padding: 30px 4vw;
+  }
+  .influencer__carousel--equal-height .slick-track{
+      display: flex !important;
+  }
+
+  .influencer__carousel--equal-height .slick-slide{
+      display: flex !important;
+      height: auto !important;
+  }
+  [class^='influencer__bottom-item']{
+    position: relative;
+  	display: inline-block;
+    vertical-align: bottom;
+    border-radius: 4px;
+    width: 100%;
+    margin-right: 14px;
+    cursor: pointer;
+    overflow: hidden;
+  }
+  @media (min-width:850px){
+    [class^='influencer__bottom-item']{
+    max-width: 172px;
+  }
+  }
+  .top__svg-wrapper{
+  	position: absolute;
+    z-index: 2;
+    width: 77px;
+    height: 77px;
+    cursor: pointer;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: white;
+    border-radius: 50%;
+    box-shadow: 0 0 60px 50px rgba(0, 0, 0, 0.5);
+    transition: all .25s ease-in-out;
+  }
+  .top__svg-wrapper:hover{
+    transform: translate(-50%, -50%) scale(1.1);
+    transform-origin: center center;
+  }
+  .top__svg{
+    position: relative;
+  	text-align: center;
+    width: 25px;
+    height: 25px;
+    left: 28px;
+    top: 26px;
+  }
+  .influencer__bottom-item--selected{
+  	border: 4px solid orange;
+  }
+  .influencer__bottom-item--selected .influencer__bottom-image{
+  	border-radius: 0px;
+  }
+  .influencer__bottom-image{
+    position: relative;
+    max-width: 100%;
+    width: 100%;
+    border-radius: 4px;
+    max-height: 110px;
+    transform: scale(1);
+    transition: all transform ease-in-out;
+  }
+  .influencer__bottom-text{
+  	position: absolute;
+    width: 100%;
+    transform: translate(-50%, -50%);
+    top: 50%;
+    left: 50%;
+    text-align: center;
+    font-weight: bold;
+    color: white;
+    pointer-events: none;
+    opacity: 0;
+    transition: all .32s ease-in-out;
+  }
+  .influencer__svg-wrapper,
+  .influencer__svg-wrapper *{
+  	pointer-events: none;
+  }
+  .influencer__svg-wrapper{
+  	position: absolute;
+    z-index: 1;
+    width: 25px;
+    height: 25px;
+    bottom: 10px;
+      right: 10px;
+    background: white;
+    border-radius: 50%;
+    transition: all .25s ease-in-out;
+  }
+  .influencer__svg{
+    position: relative;
+  	text-align: center;
+	width: 10px;
+    height: 10px;
+    left: 9px;
+    top: 0;
+  }
+  .influencer__carousel [class^='influencer__bottom-item']:hover .influencer__bottom-text,
+  .influencer__carousel .influencer__bottom-item--active .influencer__bottom-text{
+	opacity: 1;
+  }
+  .influencer__carousel [class^='influencer__bottom-item']:hover .influencer__bottom-image,
+  .influencer__carousel .influencer__bottom-item--active .influencer__bottom-image{
+/*       transform: scale(1.1); */
+  }
+  .influencer__carousel .influencer__bottom-item--active .influencer__bottom-image{
+    border: 4px solid {{section.settings.border-color}};
+  }
+  .influencer__carousel .slick-list{
+/*     display: flex;
+    justify-content: center;
+    align-items: center; */
+  }
+
+  .influencer__carousel .slick-list .slick-track{
+/*     display: inline-block !important;
+    width: auto !important; */
+  }
+  .lander-influencer .slick-list{
+    width: 100%;
+    display: block;
+    margin: 0 auto;
+  }
+</style>
+
+<script>
+  $(document).ready(function(){
+    
+	var $carouselBottom = $('.influencer__carousel');
+    var $topImage = document.querySelector('.influencer__top-image');
+    var $svg = document.querySelector('.top__svg-wrapper');
+    
+    //change main image
+    $topImage.src = document.querySelector('.influencer__bottom-item').getAttribute('data-img');
+    console.log(document.querySelector('.influencer__bottom-item').getAttribute('data-img'));
+    
+    function autoPlayVideo(vcode){
+      "use strict";
+      $('#influencerVideoContainer').html('<iframe id="landerInfluencerVideo" class="influencer__top-iframe" src="https://www.youtube.com/embed/'+vcode+'?autoplay=1&loop=1&rel=0&wmode=transparent" style="width:100%; height:100%;" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>');
+  	}
+    $carouselBottom.slick({
+      slidesToShow: {{section.blocks.size}},
+    slidesToScroll: 1,
+    dots: false,
+      infinite: false,
+      arrows: false,
+       responsive: [
+    {
+      breakpoint: 850,
+      settings: {
+        slidesToShow: 4,
+        slidesToScroll: 1
+      }
+    },
+                          {
+      breakpoint: 600,
+      settings: {
+        slidesToShow: 3,
+        slidesToScroll: 1
+      }
+    },
+    {
+      breakpoint: 500,
+      settings: {
+        slidesToShow: 2,
+        slidesToScroll: 1
+      }
+    }
+  ]
+  });
+    
+    
+    function centerSlider(){
+	var $items = document.querySelectorAll('.influencer__bottom-item');
+	var $slider = document.querySelector('.lander-influencer .slick-list');
+	var marginRight = 14;
+	var total = -marginRight;
+	for (var each of $items){
+		total += each.offsetWidth + marginRight;
+	}
+        $slider.style.maxWidth = total+'px';
+    }
+    
+          function resizeVideo(){
+    var $containerWidth = $(".influencer__top-video");
+    
+    function calculateRatioHeight(width){
+        return Math.round((width/16)*9);
+    }
+    
+    $containerWidth.height(calculateRatioHeight($containerWidth.width()))
+	
+  }
+    
+    centerSlider();
+    resizeVideo();
+    window.onresize = function(event) {
+        centerSlider();
+      resizeVideo();
+    };
+    
+
+    function playVideo(e){
+    var $slide = e.target.closest('.slick-slide');
+
+      var imageUrl = e.target.src;
+      
+      if (imageUrl == null){
+      	imageUrl = e.target.closest('.influencer__bottom-image');
+        imageUrl = imageUrl.src;
+      }
+      let currentSlide = {
+        "videoId": e.target.closest('.slick-slide').getAttribute('data-video'),
+        "imageUrl" : imageUrl
+      };
+	  
+      //add 'active' class to clicked element
+      var $slides = document.querySelectorAll('.influencer__carousel .slick-slide');
+      for (var each of $slides){ each.classList.remove('influencer__bottom-item--active'); }
+      $slide.classList.add('influencer__bottom-item--active');
+      
+      //
+      $topImage.classList.add('influencer__top-image--hide');
+      $svg.classList.add('top__svg-wrapper--hide');
+      autoPlayVideo(currentSlide.videoId);
+      
+    }
+    
+    //every time an image is clicked
+    $carouselBottom.on('click', function (el){
+      playVideo(el);
+  });
+    $svg.addEventListener('click', function(e){
+              function eventFire(el, etype){
+        if (el.fireEvent) {
+          el.fireEvent('on' + etype);
+        } else {
+          var evObj = document.createEvent('Events');
+          evObj.initEvent(etype, true, false);
+          el.dispatchEvent(evObj);
+        }
+      }
+      var $el = document.querySelector('.influencer__bottom-image');
+      eventFire($el, 'click');
+    });
+    
+});
+</script>
+{% endif %}
+
+{% schema %}
+  {
+    "name": "Influencer",
+    "class": "lander-benefits",
+    "settings": [
+      {
+        "type": "checkbox",
+        "id": "hide",
+        "label": "Hide this section",
+		"default": false
+      },
+	   {
+        "type": "text",
+        "id": "inf-title",
+        "label": "Title"
+      },
+	   {
+        "type": "text",
+        "id": "inf-subtitle",
+        "label": "Subtitle"
+      },
+	  {
+          "type": "image_picker",
+          "id": "preview-image",
+       		"label": "Preview Image"
+        },
+	{
+	      "type": "color",
+		  "id": "border-color",
+		  "label": "Selected item border color",
+		  "default": "#ff674d"
+	      }
+	  ],
+	"blocks": [
+    {
+      "type": "influencer-items",
+      "name": "Image, video & text",
+      "settings": [
+        {
+          "id": "influencer-image",
+          "type": "image_picker",
+       		"label": "Image",
+			"info": "Make sure every image has same width and height."
+        },
+        {
+          "id": "influencer-text",
+          "type": "text",
+          "label": "Heading"
+        },
+        {
+          "id": "influencer-video",
+          "type": "text",
+          "label": "Youtube video code"
+        }
+      ]
+    }
+  ]
+  }
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

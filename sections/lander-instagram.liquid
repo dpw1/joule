@@ -1,0 +1,48 @@
+{%- assign hide = section.settings.hide -%}
+{% if hide == false %}
+<section id="instagram_section">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        {{ section.settings.instagram_script }}
+      </div>
+    </div>
+  </div>
+</section>
+<style>
+	section#instagram_section {
+      background-color: {{section.settings.ig-color}} !important;
+}
+</style>
+{% endif %}
+{% schema %}
+  {
+    "name": "Instagram",
+	"settings": [
+      {
+        "type": "checkbox",
+        "id": "hide",
+        "label": "Hide this section",
+		"default": false
+      },
+      {
+          "type": "textarea",
+          "id": "instagram_script",
+          "label": "Instagram Code"
+      },
+	  	{
+	      "type": "color",
+		  "id": "ig-color",
+		  "label": "Background Color",
+		  "default": "#f7f7f7"
+	      }
+
+	  ]
+  }
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

@@ -1,0 +1,190 @@
+{%- assign hide = section.settings.hide -%}
+{%- assign video_link = section.settings.video_link -%}
+{%- assign video_image = section.settings.video_image -%}
+{% if hide == false %}
+
+<section id="fifth_section" class="lander-demo fifth_section">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-8  video_area lander-demo__video{% if video_link != "" %}--active{% endif %}">
+        {% if video_link %}
+        <div id="embed-container" class="lander-demo__container">
+        <iframe id="landerDemoVideo" class="lander-demo__iframe" src="https://www.youtube.com/embed/{{ section.settings.video_link }}" style="width:100%; height:100%;" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+        </div>
+        {% endif %}
+        <div class="lander-demo__preview">
+          <span class="lander-demo__svg-wrapper">
+            <svg class="lander-demo__svg" id="play" viewBox="-780.6 689.9 19.8 22.1" style="enable-background:new -780.6 689.9 19.8 22.1;" xml:space="preserve" width="100%" height="100%">
+<path fill="currentColor" id="azXMLID_1287_" d="M-780.6,691.2v19.5c0,1,1.1,1.6,1.9,1.1l17.2-9.7c0.9-0.5,0.9-1.8,0-2.3l-17.2-9.7
+	C-779.5,689.6-780.6,690.2-780.6,691.2z"></path>
+</svg>
+          </span>
+        	<img class="lander-demo__video-thumb" src="{{ video_image | img_url: 'master' }}" alt=""/>
+        </div>
+        </div>
+      <div class="col-md-4 content_area">
+        <h2>{{ section.settings.fifth_video_title }}</h2>
+        <p>{{ section.settings.fifth_video_text1 }}</p>
+      </div>
+    </div>
+    
+  </div>
+</section>
+<script>
+$( document ).ready(function() {
+  var videoLink = `{{ video_link }}`;
+  var $container = $("#embed-container");
+  var $thumb = $(".lander-demo__video--active .lander-demo__preview");
+  
+  function resizeVideo(){
+    var $containerWidth = $(".lander-demo__video--active .lander-demo__container");
+    
+    function calculateRatioHeight(width){
+        return Math.round((width/16)*9);
+    }
+    
+    $containerWidth.height(calculateRatioHeight($containerWidth.width()))
+	
+  }
+  function autoPlayVideo(vcode){
+    "use strict";
+    resizeVideo();
+    $container.html('<iframe id="landerDemoVideo" class="lander-demo__iframe" src="https://www.youtube.com/embed/'+vcode+'?autoplay=1&loop=1&rel=0&wmode=transparent" style="width:100%; height:100%;" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>');
+  }
+  $thumb.click(function(ev){
+    console.log('ok');
+    autoPlayVideo(videoLink);
+	$thumb.addClass('lander-demo__preview--hide');
+    $thumb.on('transitionend webkitTransitionEnd oTransitionEnd otransitionend MSTransitionEnd', 
+    function() {
+        $thumb.remove();
+    });  
+  });
+  resizeVideo();
+  window.onresize = function() {
+      resizeVideo();
+    
+  }
+  });
+
+</script>
+<style>
+/* start demo */
+  @media (min-width: 1200px){
+    .lander-demo .container{
+    	width: 1195px !important;
+    }
+  }
+  .lander-demo__video{
+  	position: relative;
+  }
+  .lander-demo__video-thumb{
+  	position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+  }
+  .lander-demo__video--active .lander-demo__video-thumb{
+  	cursor: pointer;
+  }
+  .lander-demo__video .lander-demo__svg-wrapper{
+  	display: none;
+  }
+    .lander-demo__video--active .lander-demo__svg-wrapper{
+  	display: block;
+  }
+  .lander-demo__svg-wrapper
+  .lander-demo__container{
+  	width: 100%;
+    height: 100%;
+    
+  }
+  .lander-demo__svg-wrapper{
+  	position: absolute;
+    z-index: 1;
+    width: 77px;
+    height: 77px;
+    cursor: pointer;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: white;
+    border-radius: 50%;
+    box-shadow: 0 0 60px 50px rgba(0, 0, 0, 0.5);
+    transition: all .25s ease-in-out;
+  }
+  .lander-demo__svg-wrapper:hover{
+    transform: translate(-50%, -50%) scale(1.1);
+    transform-origin: center center;
+  }
+  .lander-demo__svg{
+    position: relative;
+  	text-align: center;
+    width: 25px;
+    height: 25px;
+    left: 28px;
+    top: 26px;
+  }
+  .lander-demo__preview{
+  	opacity: 1;
+    transition: all .32s ease-out;
+  }
+  .lander-demo__preview--hide{
+  	opacity: 0;
+  }
+    @media (max-width:400px){
+      .lander-demo__video--active{
+        overflow-y: hidden;
+      }
+  }
+  
+  .lander-demo .content_area{
+	padding-left: 25px !important;
+}
+
+/* end demo */
+</style>
+{% endif %}
+
+{% schema %}
+  {
+    "name": "Demonstration",
+    "class": "lander-demo",
+    "settings": [
+      {
+        "type": "checkbox",
+        "id": "hide",
+        "label": "Hide this section",
+		"default": false
+      },
+	  {
+        "type": "text",
+        "id": "video_link",
+        "label": "Youtube video code. Save and reload to see changes.",
+		"info": "Last digits of youtube url. www.youtube.com/watch?v=aiavtMNE8lc videos's code would be aiavtMNE8lc"
+      },
+	  {
+        "type": "image_picker",
+        "id": "video_image",
+        "label": "Video thumbnail image"
+      },
+	   {
+        "type": "text",
+        "id": "fifth_video_title",
+        "label": "Title Panel"
+      },
+	  {
+        "type": "textarea",
+        "id": "fifth_video_text1",
+        "label": "Text Panel"
+      }
+
+	  ]
+  }
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

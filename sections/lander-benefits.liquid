@@ -1,0 +1,429 @@
+{%- assign hide = section.settings.hide -%}
+{%- assign image-max-width = section.settings.image-max-width -%}
+{% if hide == false %}
+
+<div class="lander-features">
+   <div class="lander-vertical">
+      <img src="{{ section.settings.sixth_image_right | img_url: '660x' }}">
+   </div>
+<!-- left image -->
+   <div class="lander-horizontal">
+      <img src="{{ section.settings.sixth_image_left | img_url: '660x' }}">
+   </div>
+   <div class="lander-features-inner">
+        <h2>{{ section.settings.sixth_title }}</h2>
+      <div class="lander-feature-grid">
+                {% for block in section.blocks %}
+           {% case block.type %}
+               {% when 'select' %}
+                 <div class="lander-feature">
+            <div class="feature-icon">
+	 <img src="{{ block.settings.six-image | img_url }}" alt="">
+            </div>
+            <div class="feature-text">
+              <h4>{{ block.settings.img-heading }}</h4>
+              <p>{{ block.settings.img-text }}</p>
+            </div>
+         </div>
+           {% endcase %}
+        {% endfor %}
+
+      </div>
+     {% if section.settings.benefit_btn_link != blank  %}
+      <a class="button button--primary" href="{{section.settings.benefit_btn_link}}">{{ section.settings.benefit_btn_text }}</a>
+     {% endif   %}
+   </div>
+</div>
+
+<style>
+#landerpage .product-form__item--quantity {
+    max-width: 294px;
+    width: 100%;
+    margin-bottom: 15px;
+    display: block !important;
+  flex: unset !important;
+}
+
+@media (max-width:768px){
+    form[class*="product-form-lander"]{
+        display: block;
+        max-width: 300px;
+        margin: 0 auto;
+        width: 100%;
+
+    }
+
+}
+.lander-features {
+    position: relative;
+}
+
+.lander-vertical, .lander-horizontal {
+    position: absolute;
+    z-index: 1;
+}
+
+.lander-vertical img, .lander-horizontal img {
+    width: 100%;
+}
+
+.lander-vertical {
+    top: 0;
+    right: 0;
+  {% if image-max-width != blank %}
+  	max-width: {{image-max-width}}px;
+  	width: 100%;
+      {% endif %}
+/*     max-width: 500px; */
+/*   	width: 100%; */
+}
+
+.lander-horizontal {
+    bottom: 50px;
+    left: 0;
+    max-width: 300px;
+  	width: 100%;
+}
+
+.lander-features-inner {
+    width: 90%;
+    max-width: 1400px;
+    padding: 84px 42px;
+    margin: auto;
+  background-color: {{ section.settings.benefits-bg-color}};
+    color: #ff674d;
+    border-radius: 4px;
+    overflow: hidden;
+    box-sizing: border-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+}
+
+[id*='lander-benefits'] .lander-features-inner h2 {
+    font-size: 52px;
+    line-height: 1;
+    text-align: center;
+    max-width: 500px;
+    margin-bottom: 42px;
+    z-index: 2;
+  	font-weight: bold;
+  text-transform: unset !important;
+  color: {{section.settings.title-color}} !important;
+}
+
+.lander-features-inner .button {
+    min-width: 220px;
+    z-index: 2;
+}
+
+.lander-feature-grid {
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    -webkit-justify-content: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    width: 100%;
+    max-width: 800px;
+    margin-bottom: 28px;
+    z-index: 2;
+}
+
+.lander-feature {
+    -webkit-flex: 0 0 50%;
+    -ms-flex: 0 0 50%;
+    flex: 0 0 50%;
+    width: 50%;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    padding: 14px 28px;
+    box-sizing: border-box;
+}
+
+.feature-icon {
+    margin-right: 14px;
+  	min-width: 75px;
+  	max-width: 75px;
+  	width: 100%;
+}
+
+.feature-icon svg {
+    width: 70px;
+    height: auto;
+}
+
+.feature-icon svg .a {
+    stroke: #ff674d;
+    stroke-width: 2px;
+}
+
+.feature-text h4 {
+    margin-bottom: 7px;
+}
+
+.feature-text p {
+    font-size: 16px;
+    line-height: 24px;
+    color: #43413f;
+    opacity: 0.5;
+}
+
+@media (min-width: 1750px) {
+    .lander-vertical {
+        right: calc(50vw - 800px);
+    }
+
+    .lander-horizontal {
+        left: calc(50vw - 700px);
+    }
+}
+
+@media (max-width: 1300px) {
+    .lander-vertical {
+        top: -80px;
+        right: -10px;
+    }
+
+    .lander-horizontal {
+        width: 250px;
+        bottom: 10px;
+    }
+}
+
+@media (max-width: 1200px) {
+    .lander-vertical {
+      top: -4vh;
+    	right: 3vw;
+    }
+
+    .lander-horizontal {
+        width: 200px;
+        bottom: 10px;
+    }
+}
+
+@media (max-width: 900px) {
+    .lander-vertical {
+        right: 3vw;
+    	top: -5vh;
+    }
+
+    .lander-horizontal {
+        bottom: auto;
+        top: 0px;
+        width: 170px;
+    }
+
+    .lander-features-inner {
+        padding: 70px 28px 56px;
+    }
+
+    .lander-features-inner h2 {
+        font-size: 40px;
+        max-width: 450px;
+        margin-bottom: 56px;
+    }
+
+    .lander-feature {
+        -webkit-flex-direction: column;
+        -ms-flex-direction: column;
+        flex-direction: column;
+        -webkit-align-items: center;
+        -ms-flex-align: center;
+        align-items: center;
+        text-align: center;
+        padding: 14px 14px 0;
+        -webkit-flex: 0 0 33%;
+        -ms-flex: 0 0 33%;
+        flex: 0 0 33%;
+        width: 33%;
+    }
+
+    .feature-icon {
+        margin: 0;
+    }
+}
+
+@media (max-width: 730px) {
+    .lander-vertical {
+      	right: -8vw;
+      	top: -40px;
+    }
+
+    .lander-horizontal {
+        bottom: auto;
+        top: 40px;
+        width: 130px;
+    }
+
+    .lander-features-inner h2 {
+        max-width: 300px;
+        margin-bottom: 42px;
+    }
+
+    .lander-feature {
+        -webkit-flex: 0 0 50%;
+        -ms-flex: 0 0 50%;
+        flex: 0 0 50%;
+        width: 50%;
+        max-width: 250px;
+    }
+}
+
+@media (max-width: 500px) {
+    .lander-vertical {
+      top: -3vh !important;
+      width: auto;
+        right: 0;
+    }
+
+    .lander-horizontal {
+        bottom: auto;
+      	width: 100%;
+        left: 0;
+        top: 0;
+      	max-width: 46%;
+    }
+
+    .lander-features-inner {
+        padding: 280px 28px 56px;
+    }
+}
+
+@media (max-width: 400px) {
+    .lander-vertical,
+  	.lander-horizontal{
+        top: 0;
+    }
+
+    .lander-features-inner {
+        width: 100%;
+        padding: 280px 0 56px;
+    }
+
+    .lander-feature {
+        -webkit-flex: 0 0 100%;
+        -ms-flex: 0 0 100%;
+        flex: 0 0 100%;
+        width: 100%;
+        max-width: 320px;
+        -webkit-flex-direction: row;
+        -ms-flex-direction: row;
+        flex-direction: row;
+        -webkit-align-items: flex-start;
+        -ms-flex-align: start;
+        align-items: flex-start;
+        text-align: left;
+    }
+
+    .feature-icon {
+        margin-right: 14px;
+    }
+}
+</style>
+{% endif %}
+{% schema %}
+  {
+    "name": "Benefits",
+    "class": "lander-benefits",
+	"max_blocks": 6,
+    "settings": [
+      {
+        "type": "checkbox",
+        "id": "hide",
+        "label": "Hide this section",
+		"default": false
+      },
+
+	{
+	      "type": "color",
+		  "id": "benefits-bg-color",
+		  "label": "Background color",
+		  "default": "#f7dfdd"
+	      },
+      {
+        "type": "color",
+        "id": "title-color",
+        "label": "Title Text Color",
+		"info": "You may need to save and refresh to see changes.",
+        "default": "#000000"
+      },
+	{
+        "type": "image_picker",
+        "id": "sixth_image_left",
+        "label": "Left Image",
+		"info": "Minimum recommended width is 600px. Height may vary according to the image's aspect ratio."
+      },
+	  {
+        "type": "image_picker",
+        "id": "sixth_image_right",
+        "label": "Right Image",
+		"info": "Minimum recommended width is 600px. Height may vary according to the image's aspect ratio."
+      },
+	{
+	      "type": "text",
+		  "id": "image-max-width",
+		  "label": "Right image width in pixels",
+		  "info": "Leave empty for no width. Type in only numbers."
+	      },
+	  {
+        "type": "text",
+        "id": "sixth_title",
+        "label": "Title"
+      },
+
+	  {
+        "type": "text",
+        "id": "benefit_btn_text",
+        "label": "Button text"
+      },
+	  {
+        "type": "text",
+        "id": "benefit_btn_link",
+        "label": "Button link",
+		"info": "Leave it empty if you don't need a button. Type in '#' without quotes to scroll to top."
+      }
+
+	  ],
+ "blocks": [
+    {
+      "type": "select",
+      "name": "Icon and Text",
+      "settings": [
+        {
+          "id": "six-image",
+          "type": "image_picker",
+       		"label": "Image"
+        },
+        {
+          "id": "img-heading",
+          "type": "text",
+          "label": "Heading"
+        },
+        {
+          "id": "img-text",
+          "type": "textarea",
+          "label": "Text"
+        }
+      ]
+    }
+  ]
+  }
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

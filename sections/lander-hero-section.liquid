@@ -1,0 +1,213 @@
+{%- assign hide = section.settings.hide -%}
+{%- assign overlay = section.settings.overlay -%}
+{%- assign third_sec_title = section.settings.third_sec_title -%}
+{%- assign anim-speed = section.settings.anim-speed -%}
+
+{% if hide == false %}
+<section id="third_section" class="lander-review" style="background:linear-gradient(rgba(0, 0, 0, 0.{{ overlay }}), rgba(0, 0, 0, 0.{{ overlay }})), url('{{ section.settings.third_sec_bgimg | img_url: 'master' }}');">
+
+        <h2 class="customWord lander-review__title">{{ third_sec_title }}</h2>
+  <div id="third-section-append"></div>
+</section>
+<style>
+  @media (min-width:991px){
+    .lander-review__title{
+    	    max-width: 1170px;
+    display: block;
+    margin: 0 auto;
+    width: 100%;
+
+    }
+  }
+  @media (max-width:1196px) and (min-width:991px){
+    .lander-review__title{
+    	padding-left: 4% !important;
+    }
+  }
+  [id*=lander] .lander-review__title{
+  	visibility: hidden;
+    color: {{section.settings.title-color}} !important;
+  }
+  [id*=lander] .lander-review__title--visible{
+  	visibility: visible;
+  }
+  @media (max-width: 991px){
+	[id*='lander-media']{
+		margin-top: -70px;
+	}
+	#third_section{
+		position: relative;
+	}
+	#third_section .lander-review__title{
+		position: absolute;
+		bottom: 120px;
+		left: 0;
+		right: 0;
+		width: 100%;
+		margin: 0 auto;
+		padding-left: 10px !important;
+		padding-right: 10px;
+	}
+}
+
+@media (max-width: 365px){
+		#third_section .lander-review__title{
+		font-size: 35px !important;
+    line-height: 35px !important;
+	}
+}
+
+@media (max-width: 600px){
+#third_section .lander-review__title{
+    font-size: 42px;
+    line-height: 42px;
+}
+}
+
+@media (max-width: 800px){
+#third_section .lander-review__title{
+    font-size: 49px;
+    line-height: 49px;
+}
+}
+</style>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script>
+<script>
+  $(document).ready(function(){
+     var animSpeed = `{{ anim-speed }}`;
+	var $el = $('.customWord');
+var extract = $el.html().match(/\[(.*)\]/);
+  $('.lander-review__title').addClass('lander-review__title--visible');
+    
+  if (extract != null){
+  
+
+
+var newText = $el.html().replace(extract[0], '<span id="wordanim" class="ml3"></span>')
+$el.html(newText)
+// change words here and animate them
+var words = extract[1].split('|');
+var i = 0;
+function animateWord(word) {
+	word = words[i];
+	var $wordAnim = $("#wordanim");
+  	var speed = animSpeed;
+	$wordAnim.css("opacity", "1");
+	$wordAnim.text(word);
+	$wordAnim.each(function() {
+		$(this).html(
+			$(this).text()
+				.replace(/([^\x00-\x80]|\w)/g, "<span class='letter'>$&</span>")
+		);
+	});
+	var finishedPromise = anime
+		.timeline({ loop: false })
+		.add({
+			targets: ".ml3 .letter",
+			opacity: [0, 1],
+			easing: "easeInOutQuad",
+			duration: speed/1.818,
+			delay: function(el, i) {
+				return speed/6.666 * (i + 1);
+			}
+		})
+		.add({
+			targets: ".ml3",
+			opacity: 0,
+			duration: speed,
+			easing: "easeOutExpo",
+			delay: speed
+		});
+	var promise = finishedPromise.finished.then(logFinished);
+
+	function logFinished() {
+		setTimeout(function() {
+			promise = finishedPromise.finished.then(logFinished);
+		});
+	}
+
+	finishedPromise.update = function(anim) {
+		if (anim.completed) {
+			if (i < words.length) {
+				i++;
+			}
+			if (i >= words.length) {
+				i = 0;
+			}
+			animateWord();
+			return;
+		}
+	};
+}
+
+animateWord();
+
+  
+  }
+});
+  
+</script>
+{% endif %}
+
+
+
+{% schema %}
+  {
+    "name": "Hero",
+    "class": "lander-hero-section",
+    "settings": [
+      {
+        "type": "checkbox",
+        "id": "hide",
+        "label": "Hide this section",
+		"default": false
+      },
+      {
+        "type": "color",
+        "id": "title-color",
+        "label": "Title Text Color",
+		"info": "You may need to save and refresh to see changes.",
+        "default": "#ffffff"
+      },
+	  {
+        "type": "text",
+        "id": "third_sec_title",
+        "label": "Title",
+		"info": "To use animated words, wrap around [] and separate by |. Example: Get your [egg|potato] here"
+      },
+	  {
+          "type":      "range",
+          "id":        "anim-speed",
+          "min":       100,
+          "max":        2000,
+          "step":       50,
+          "unit":       "ms",
+          "label":     "Animation Speed",
+		  "info": "Save and refresh to see the changes.",
+          "default":   1000
+      },
+	  {
+        "type": "image_picker",
+        "id": "third_sec_bgimg",
+        "label": "Background image"
+      },
+      {
+          "type":      "range",
+          "id":        "overlay",
+          "min":       0,
+          "max":        100,
+          "step":       1,
+          "unit":       "%",
+          "label":     "Image overlay (may need to save & reload to see changes)",
+          "default":   50
+      }
+
+	  ]
+  }
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

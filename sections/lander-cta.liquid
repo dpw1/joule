@@ -1,0 +1,215 @@
+{%- assign hide = section.settings.hide -%}
+{% if hide == false %}
+<section class="cta buy-lander">
+	
+	<div class="product-text">
+		<div class="buy-lander-title">
+			<h2>{{section.settings.cta-msg}}</h2>
+		</div>
+		<div class="lander-price">
+
+				<a href="{{section.settings.cta-link}}" class="button button--primary" >
+					{{section.settings.cta-text}}
+				</a>
+  
+		</div>
+	</div>
+</section>
+<style>
+	.cta {
+	position: relative;
+          background-image: url({{ section.settings.cta-img | img_url: 'master' }});
+    background-size: cover;
+    background-position: center center;
+}
+
+.buy-lander {
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-align-items: center;
+	-ms-flex-align: center;
+	align-items: center;
+	-webkit-justify-content: flex-end;
+	-ms-flex-pack: end;
+	justify-content: flex-end;
+	min-height: 700px;
+	max-height: none;
+}
+  @media (max-width:800px){
+    .buy-lander{
+    	min-height: 310px;
+    }
+  	}
+.buy-lander .product-text {
+	position: relative;
+	max-width: 320px;
+	width: 100%;
+	padding: 42px 0 0;
+	margin-right: 15%;
+ 	background: {{ section.settings.cta-bg}};
+	border-radius: 4px;
+	overflow: hidden;
+	text-align: center;
+	box-shadow: 0px 3px 20px rgba(0, 0, 0, 0.15);
+}
+.buy-lander .product-text .buy-lander-title {
+	margin-bottom: 42px;
+}
+.buy-lander .product-text h2 {
+	text-align: center;
+	margin-bottom: 7px;
+      letter-spacing: -0.02em;
+    margin-top: 0px;
+    text-transform: unset;
+    font-weight: bold;
+    font-size: 30px;
+  color: {{ section.settings.cta-fontcolor}} !important;
+}
+.buy-lander .product-text p {
+	margin-bottom: 28px;
+	line-height: 24px;
+}
+.buy-lander .product-text span {
+	font-family: "Akkurat";
+	font-size: 42px;
+	line-height: 56px;
+	font-weight: regular;
+}
+.buy-lander .product-text .offer {
+	color: white;
+}
+.buy-lander .product-text .msrp {
+	opacity: 0.5;
+	position: relative;
+	font-size: 28px;
+}
+.buy-lander .product-text .msrp:after {
+	content: "";
+	width: 110%;
+	height: 2px;
+	position: absolute;
+	background-color: white;
+	border-radius: 2px;
+	-webkit-transform: rotate(18deg);
+	transform: rotate(18deg);
+	left: -3px;
+	top: 50%;
+}
+.buy-lander .product-text .compare-price {
+	opacity: 0.8;
+	position: relative;
+}
+.buy-lander .product-text .compare-price:after {
+	content: "";
+	width: 110%;
+	height: 2px;
+	position: absolute;
+	background-color: white;
+	border-radius: 2px;
+	left: 0;
+	top: 50%;
+}
+.buy-lander .product-text h6 {
+	font-size: 14px;
+	font-weight: 400;
+	font-style: italic;
+	text-align: center;
+	margin-top: 7px;
+	margin-bottom: 14px;
+}
+.buy-lander .product-text .lander-price {
+	max-width: 340px;
+	background-color: white;
+	padding: 35px 35px 42px;
+	box-sizing: border-box;
+	text-align: center;
+}
+.buy-lander .product-text .lander-price .button {
+	width: 100%;
+	max-width: 300px;
+}
+.buy-lander .product-text .lander-price p {
+	color: #ff674d;
+	margin-bottom: 14px;
+	font-size: 16px;
+	line-height: 21px;
+	font-weight: bold;
+}
+
+@media (max-width: 800px) {
+	.buy-lander {
+		-webkit-justify-content: center;
+		-ms-flex-pack: center;
+		justify-content: center;
+		-webkit-align-items: flex-end;
+		-ms-flex-align: end;
+		align-items: flex-end;
+	}
+	.buy-lander .product-text {
+		margin: 28px;
+	}
+	.buy-lander .product-text .lander-price {
+		padding: 28px 28px 42px;
+	}
+	.buy-lander .product-text .lander-price p {
+		font-size: 14px;
+	}
+}
+
+</style>
+{% endif %}
+{% schema %}
+  {
+    "name": "Call to Action",
+	"settings": [
+      {
+        "type": "checkbox",
+        "id": "hide",
+        "label": "Hide this section",
+		"default": false
+      },
+	  {
+        "type": "image_picker",
+        "id": "cta-img",
+        "label": "Background image",
+		"info": "Minimum recommended width is 1024px." 
+      },
+	  {
+        "type": "textarea",
+        "id": "cta-msg",
+        "label": "Text"
+      },
+	  {
+        "type": "text",
+        "id": "cta-text",
+        "label": "Button text"
+      },
+	  {
+        "type": "text",
+        "id": "cta-link",
+        "label": "Button link",
+		"info": "Type in '#' without quotes to scroll to top."
+      },
+		{
+	      "type": "color",
+		  "id": "cta-bg",
+		  "label": "Background Color",
+		  "default": "#ff674d"
+	      },
+      {
+        "type": "color",
+        "id": "cta-fontcolor",
+        "label": "Text color",
+        "default": "#ffffff"
+      }
+
+	  ]
+  }
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

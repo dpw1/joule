@@ -1,0 +1,146 @@
+{%- assign hide = section.settings.hide -%}
+{% if hide == false %}
+<section id="lander-lifestyle" class="lander-lifestyle-section fifth_section">
+  <div class="container">
+  	    <div class="row first-row">
+      <div class="col-md-5 content_area c1">
+        <h2>{{ section.settings.fifth_title2 }}</h2>
+        <p>{{ section.settings.fifth_text2 }}</p>
+        {% if section.settings.lifestyle_link1 != blank %}
+        <a class="button button--primary" href="{{section.settings.lifestyle_link1}}">{{section.settings.lifestyle_text1}}</a>
+        {% endif %}
+      </div>
+      <div class="col-md-7 video_area">
+        <img src="{{ section.settings.fifth_image_2 | img_url: 'master' }}" alt=""/>
+      </div>
+      <div class="col-md-5 content_area c-b">
+        <h2>{{ section.settings.fifth_title2 }}</h2>
+        <p>{{ section.settings.fifth_text2 }}</p>
+            {% if section.settings.lifestyle_link1 != blank %}
+        <a class="button button--primary" href="{{section.settings.lifestyle_link1}}">{{section.settings.lifestyle_text1}}</a>
+        {% endif %}
+      </div>
+      
+    </div>
+    
+    <div class="row ">
+      <div class="col-md-7 video_area">
+        <img src="{{ section.settings.fifth_image_3 | img_url: 'master' }}" alt=""/>
+      </div>
+      <div class="col-md-5 content_area btn-set">
+          <h2>{{ section.settings.fifth_title3 }}</h2>
+        <p>{{ section.settings.fifth_text3 }}</p>
+                {% if section.settings.lifestyle_link2 != blank  %}
+        <a class="button button--primary benefit-lastbtn" href="{{section.settings.lifestyle_link2}}">{{section.settings.lifestyle_text2}}</a>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+</section>
+<!--  
+#############
+CSS - ########
+-->
+<style>
+/* start lifestyle */
+  .lander-lifestyle-section .button{
+  	margin-top: 15px;
+  }
+  .benefit-lastbtn{
+  	margin-bottom: 80px;
+  }
+  .first-row{
+  	margin-bottom: 70px !important;
+  }
+  
+@media (max-width:991px){
+    .fifth_section .content_area,
+.fifth_section .video_area{
+    padding: 0 !important;
+
+}
+
+.fifth_section .content_area img,
+.fifth_section .video_area img{
+    display: block;
+    margin: 0 auto;
+    
+}
+}
+/* end lifestyle */
+
+</style>
+{% endif %}
+{% schema %}
+  {
+    "name": "Lifestyle",
+    "class": "lander-lifestyle",
+    "settings": [
+      {
+        "type": "checkbox",
+        "id": "hide",
+        "label": "Hide this section",
+		"default": false
+      },
+	  {
+        "type": "image_picker",
+        "id": "fifth_image_2",
+        "label": "Image Panel"
+      },
+	  {
+        "type": "text",
+        "id": "fifth_title2",
+        "label": "Title Panel"
+      },
+	  {
+        "type": "textarea",
+        "id": "fifth_text2",
+        "label": "Text Area Panel"
+      },
+	  {
+        "type": "text",
+        "id": "lifestyle_text1",
+        "label": "First button text"
+      },
+	  {
+        "type": "text",
+        "id": "lifestyle_link1",
+        "label": "First button link",
+		"info": "Leave it empty if you don't need a button. Type in '#' without quotes to scroll to top."
+      },
+      {
+        "type": "image_picker",
+        "id": "fifth_image_3",
+        "label": "Image Panel"
+      },
+	  {
+        "type": "text",
+        "id": "fifth_title3",
+        "label": "Title Panel"
+      },
+	  {
+        "type": "textarea",
+        "id": "fifth_text3",
+        "label": "Text Panel"
+      },
+	  {
+        "type": "text",
+        "id": "lifestyle_text2",
+        "label": "Second button text"
+      },
+	  {
+        "type": "text",
+        "id": "lifestyle_link2",
+        "label": "Second button link",
+		"info": "Leave it empty if you don't need a button. Type in '#' without quotes to scroll to top."
+      }
+
+	  ]
+  }
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}
